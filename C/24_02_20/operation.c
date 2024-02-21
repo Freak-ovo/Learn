@@ -1,4 +1,30 @@
 #include <stdio.h>
+#include <string.h>
+
+struct stu
+{
+    char name[20];
+    int age;
+    double score;
+};
+
+void set_stu(struct stu *ps)
+{
+/*     strcpy((*ps).name,"lili");
+    (*ps).age = 20;
+    (*ps).score = 100.0;
+
+    两种形式等价
+ */
+    strcpy(ps->name, "lile");//结构体指针 -> 成员
+    ps->age = 20;
+    ps->score = 100.0;
+}
+
+void print_stu(struct stu ss)
+{
+    printf("%s %d %lf\n", ss.name, ss.age, ss.score);//结构体对象.成员
+}
 
 int main()
 {
@@ -76,5 +102,31 @@ int main()
     *p = 30;
     printf("%d\n", num_7);
 
+    (num_7 > 5) ? (num_6 = 3): (num_6 = -3);
+    printf("num_6 = %d\n", num_6);
+
+    /*
+     * 数组元素引用
+     * arr[7] == *(arr+7)
+     * arr是数组首元素地址
+     * arr+7 就是跳过7个元素，指向了第8个元素
+     * *(arr+7) 就是第8个元素
+     * 
+     *   */
+
+
+    /* 结构体 */
+
+/*  struct stu
+    {
+        char name[20];
+        int age;
+        double score;
+    }; */
+    struct stu s = {0};
+    set_stu(&s);
+    print_stu(s);
     return 0;
 }
+
+
