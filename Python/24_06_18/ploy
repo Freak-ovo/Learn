@@ -1,0 +1,20 @@
+import matplotlib.pyplot as plt
+import numpy as np
+
+# 定义函数
+def f(x):
+    return x**2
+
+# 创建x数据
+x = np.linspace(-10, 10, 400)
+
+# 绘制图像
+plt.plot(x, f(x), label='$f(x) = x^2$')
+
+# 添加网格、图例和轴
+plt.axhline(0, color='black',linewidth=0.5)
+plt.axvline(0, color='black',linewidth=0.5)
+plt.grid(color = 'gray', linestyle = '--', linewidth = 0.5)
+plt.legend()
+plt.title('Graph of $f(x) = x^2$')
+plt.show()
