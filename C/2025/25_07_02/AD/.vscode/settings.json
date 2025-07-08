@@ -1,0 +1,15 @@
+{
+    "files.associations": {
+        "istream": "c",
+        "limits": "c",
+        "memory": "c",
+        "streambuf": "c",
+        "cstddef": "c",
+        "string": "c",
+        "optional": "c",
+        "new": "c",
+        "functional": "c",
+        "type_traits": "c",
+        "oled.h": "c"
+    }
+}
