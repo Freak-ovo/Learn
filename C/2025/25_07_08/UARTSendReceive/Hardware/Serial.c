@@ -1,0 +1,228 @@
+#include "stm32f10x.h"  // STM32标准外设库头文件
+#include <stdio.h>
+#include <stdarg.h>
+
+uint8_t Serial_RxData;
+uint8_t Serial_RxFlag;
+
+
+/**
+  * @brief  串口初始化函数
+  * @param  无
+  * @retval 无
+  * @note   初始化USART1，配置为9600波特率、8位数据位、无校验位、1停止位
+  */
+void Serial_Init(void)
+{
+    /* 启用USART1和GPIOA的时钟 */
+    RCC_APB2PeriphClockCmd(RCC_APB2Periph_USART1, ENABLE);  // 使能USART1时钟
+    RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA, ENABLE);  // 使能GPIOA时钟
+
+    /* GPIO初始化 - 配置USART1的TX引脚(PA9) */
+    GPIO_InitTypeDef GPIO_InitStructure;  // 定义GPIO初始化结构体
+    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF_PP;       // 复用推挽输出模式
+    GPIO_InitStructure.GPIO_Pin = GPIO_Pin_9;             // 选择引脚9 (PA9 - USART1_TX)
+    GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;     // 输出速度50MHz
+    GPIO_Init(GPIOA, &GPIO_InitStructure);                // 初始化GPIOA
+
+    /* 配置GPIO引脚参数 */
+    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IPU;       // 上拉输入模式 (用于接收信号)
+    GPIO_InitStructure.GPIO_Pin = GPIO_Pin_10;          // 选择引脚10 (PA10 - USART1_RX)
+    GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;   // 引脚响应速度50MHz (优化信号完整性)
+    GPIO_Init(GPIOA, &GPIO_InitStructure);              // 应用配置到GPIOA端口 
+
+    /* USART参数配置 */
+    USART_InitTypeDef USART_InitStructure;  // 定义USART初始化结构体
+    USART_InitStructure.USART_BaudRate = 9600;                          // 波特率9600bps
+    USART_InitStructure.USART_HardwareFlowControl = USART_HardwareFlowControl_None; // 无硬件流控
+    USART_InitStructure.USART_Mode = USART_Mode_Rx | USART_Mode_Tx;     // 使能发送和接收模式
+    USART_InitStructure.USART_Parity = USART_Parity_No;                 // 无奇偶校验
+    USART_InitStructure.USART_StopBits = USART_StopBits_1;              // 1位停止位
+    USART_InitStructure.USART_WordLength = USART_WordLength_8b;         // 8位数据长度
+    USART_Init(USART1, &USART_InitStructure);                           // 初始化USART1
+
+    /* 使能USART1 */
+    USART_Cmd(USART1, ENABLE);  // 启动USART1外设
+
+    /* 配置接收中断 */
+    USART_ITConfig(USART1, USART_IT_RXNE, ENABLE);           // 使能接收中断（RX Not Empty）
+
+    /* 配置NVIC中断控制器 */
+    NVIC_InitTypeDef NVIC_InitStructure;
+    NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);          // 设置中断优先级分组
+    NVIC_InitStructure.NVIC_IRQChannel = USART1_IRQn;        // USART1中断通道
+    NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 1; // 抢占优先级1
+    NVIC_InitStructure.NVIC_IRQChannelSubPriority = 1;       // 子优先级1
+    NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;          // 使能中断通道
+    NVIC_Init(&NVIC_InitStructure);                          // 应用NVIC配置
+
+    /* 使能USART1 */
+    USART_Cmd(USART1, ENABLE);                               // 启动USART1外设
+}
+
+
+
+
+/**
+  * @brief  串口发送单字节数据
+  * @param  Byte: 要发送的字节数据
+  * @retval 无
+  * @note   通过USART1发送一个字节，并等待发送完成
+  */
+void Serial_SendByte(uint8_t Byte)
+{
+    /* 将数据写入发送数据寄存器 */
+    USART_SendData(USART1, Byte);  // 将字节数据放入发送缓冲区
+    
+    /* 等待发送完成（TXE标志置位） */
+    while (USART_GetFlagStatus(USART1, USART_FLAG_TXE) == RESET)
+    {
+        // 空循环，等待发送缓冲区空标志(TXE)置位
+        // TXE=1表示数据已转移到移位寄存器，可以发送新数据
+    }
+}
+
+/**
+  * @brief  串口发送字节数组
+  * @param  Array:  指向要发送的字节数组的指针
+  * @param  Length: 要发送的字节数量
+  * @retval 无
+  * @note   通过USART1连续发送多个字节数据
+  *         此函数复用Serial_SendByte()，确保每个字节完整发送后才发送下一个字节
+  *         使用阻塞方式发送，适用于小数据量传输
+  */
+void Serial_SendArray(uint8_t *Array, uint16_t Length)
+{
+    uint16_t i;  // 循环计数器
+    
+    // 遍历数组中的每个字节
+    for (i = 0; i < Length; i++)
+    {
+        // 调用Serial_SendByte函数发送当前字节
+        // 该函数内部已包含等待发送完成的逻辑
+        Serial_SendByte(Array[i]);
+    }
+}
+
+
+/**
+  * @brief  发送以空字符('\0')结尾的字符串
+  * @param  String: 指向要发送的字符串的指针
+  * @retval 无
+  * @note   此函数遍历字符串直到遇到空终止符('\0')，通过串口发送每个字符
+  *         适用于发送C语言风格的空终止字符串
+  *         
+  */
+void Serial_SendString(char *String)
+{
+    uint8_t i;  // 字符索引计数器
+    
+    // 遍历字符串中的每个字符，直到遇到空终止符(ASCII 0)
+    for (i = 0; String[i] != '\0'; i++)
+    {
+        // 调用Serial_SendByte发送当前字符
+        // 由于char类型与uint8_t兼容，可以直接传递
+        Serial_SendByte(String[i]);
+    }
+}
+
+
+/**
+ * 计算无符号整数X的Y次幂。
+ * @param X 底数（无符号32位整数）
+ * @param Y 指数（无符号32位整数）
+ * @return X的Y次幂的结果（无符号32位整数）
+ */
+uint32_t Serial_Pow(uint32_t X, uint32_t Y)
+{
+    uint32_t Result = 1;
+    // 循环Y次，每次将Result乘以X
+    while (Y--)
+    {
+        Result *= X;
+    }
+    
+    return Result;
+}
+
+/**
+ * 将无符号整数按指定长度逐位通过串口发送（以ASCII字符形式）。
+ * @param Number 要发送的无符号32位整数
+ * @param Length 指定发送的数字位数（不足时高位补零，超过时截断高位）
+ */
+void Serial_SendNumber(uint32_t Number, uint8_t Length)
+{
+    uint8_t i;
+    // 从最高位开始，逐位处理Length位数字
+    for (i = 0; i < Length; i++)
+    {
+        // 计算当前位的数值：Number / 10^(Length-i-1) % 10
+        // 转换为ASCII码（数字0~9对应0x30~0x39）后发送
+        Serial_SendByte(Number / Serial_Pow(10, Length - i - 1) % 10 + 0x30);
+    }
+}
+
+int fputc(int ch, FILE *f)
+{
+    Serial_SendByte(ch);
+    return ch;
+}
+
+
+void Serial_Printf(char *format, ...)
+{
+    char String[100];            // 1. 创建输出缓冲区
+    va_list arg;                 // 2. 声明可变参数列表
+    va_start(arg, format);       // 3. 初始化可变参数
+    vsprintf(String, format, arg); // 4. 格式化字符串
+    va_end(arg);                 // 5. 清理可变参数
+    Serial_SendString(String);   // 6. 发送格式化后的字符串
+}
+
+
+/**
+  * @brief  检查串口接收标志位
+  * @param  无
+  * @retval uint8_t 
+  *         1: 接收到新数据
+  *         0: 未接收到新数据
+  * @note   此函数会清除接收标志位
+  */
+uint8_t Serial_GetRxFlag(void)
+{
+    if (Serial_RxFlag == 1)       // 检查接收标志位是否置位
+    {
+        Serial_RxFlag = 0;        // 清除接收标志位
+        return 1;                 // 返回接收到新数据
+    }
+    return 0;                     // 无新数据
+}
+
+/**
+  * @brief  获取串口接收到的数据
+  * @param  无
+  * @retval uint8_t 最后接收到的数据字节
+  * @note   此函数不会清除接收标志位，需配合Serial_GetRxFlag使用
+  */
+uint8_t Serial_GetRxData(void)
+{
+    return Serial_RxData;         // 返回存储的接收数据
+}
+
+/**
+  * @brief  USART1中断服务函数
+  * @param  无
+  * @retval 无
+  * @note   处理串口接收中断，读取接收到的字节
+  */
+void USART1_IRQHandler(void)
+{
+    /* 检查接收中断标志（RXNE = Receive Data Register Not Empty）*/
+    if (USART_GetITStatus(USART1, USART_IT_RXNE) != RESET)  // 修正：应为 != RESET
+    {
+        Serial_RxData = USART_ReceiveData(USART1);   // 读取接收到的字节存入全局变量
+        Serial_RxFlag = 1;                           // 设置接收标志位
+        
+        USART_ClearITPendingBit(USART1, USART_IT_RXNE);  // 清除中断标志位
+    }
+}
