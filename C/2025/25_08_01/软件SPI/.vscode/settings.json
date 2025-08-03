@@ -1,0 +1,22 @@
+{
+    "files.associations": {
+        "istream": "c",
+        "limits": "c",
+        "memory": "c",
+        "streambuf": "c",
+        "cstddef": "c",
+        "string": "c",
+        "optional": "c",
+        "new": "c",
+        "functional": "c",
+        "type_traits": "c",
+        "oled.h": "c",
+        "stm32f10x.h": "c",
+        "stdarg.h": "c",
+        "key.h": "c",
+        "delay.h": "c",
+        "myiic.h": "c",
+        "string.h": "c",
+        "mpu6050.h": "c"
+    }
+}
