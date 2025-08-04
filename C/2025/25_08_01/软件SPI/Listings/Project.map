@@ -239,6 +239,7 @@ Section Cross References
     main.o(i.main) refers to w25q128.o(i.W25Q128_ReadID) for W25Q128_ReadID
     main.o(i.main) refers to oled.o(i.OLED_ShowHexNum) for OLED_ShowHexNum
     main.o(i.main) refers to w25q128.o(i.W25Q128_SectorErase) for W25Q128_SectorErase
+    main.o(i.main) refers to w25q128.o(i.W25Q128_PageProgram) for W25Q128_PageProgram
     main.o(i.main) refers to w25q128.o(i.W25Q128_ReadData) for W25Q128_ReadData
     main.o(i.main) refers to main.o(.data) for DID
     entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry10a.o(.ARM.Collect$$$$0000000D) for __rt_final_cpp
@@ -821,7 +822,6 @@ Removing Unused input sections from the image.
     Removing mpu6050.o(i.MPU6050_ReadReg), (152 bytes).
     Removing mpu6050.o(i.MPU6050_WaitEvent), (34 bytes).
     Removing mpu6050.o(i.MPU6050_WriteReg), (100 bytes).
-    Removing w25q128.o(i.W25Q128_PageProgram), (76 bytes).
     Removing dadd.o(.text), (334 bytes).
     Removing dmul.o(.text), (228 bytes).
     Removing ddiv.o(.text), (222 bytes).
@@ -829,7 +829,7 @@ Removing Unused input sections from the image.
     Removing cdrcmple.o(.text), (48 bytes).
     Removing depilogue.o(.text), (186 bytes).
 
-512 unused section(s) (total 22766 bytes) removed from the image.
+511 unused section(s) (total 22690 bytes) removed from the image.
 
 ==============================================================================
 
@@ -965,16 +965,17 @@ Image Symbol Table
     i.USART_ReceiveData                      0x08000946   Section        0  stm32f10x_usart.o(i.USART_ReceiveData)
     i.UsageFault_Handler                     0x08000950   Section        0  stm32f10x_it.o(i.UsageFault_Handler)
     i.W25Q128_Init                           0x08000954   Section        0  w25q128.o(i.W25Q128_Init)
-    i.W25Q128_ReadData                       0x0800095c   Section        0  w25q128.o(i.W25Q128_ReadData)
-    i.W25Q128_ReadID                         0x080009a0   Section        0  w25q128.o(i.W25Q128_ReadID)
-    i.W25Q128_SectorErase                    0x080009de   Section        0  w25q128.o(i.W25Q128_SectorErase)
-    i.W25Q128_WaitBusy                       0x08000a10   Section        0  w25q128.o(i.W25Q128_WaitBusy)
-    i.W25Q128_WriteEnable                    0x08000a40   Section        0  w25q128.o(i.W25Q128_WriteEnable)
-    i.__scatterload_copy                     0x08000a52   Section       14  handlers.o(i.__scatterload_copy)
-    i.__scatterload_null                     0x08000a60   Section        2  handlers.o(i.__scatterload_null)
-    i.__scatterload_zeroinit                 0x08000a62   Section       14  handlers.o(i.__scatterload_zeroinit)
-    i.main                                   0x08000a70   Section        0  main.o(i.main)
-    .constdata                               0x08000b64   Section     1520  oled.o(.constdata)
+    i.W25Q128_PageProgram                    0x0800095c   Section        0  w25q128.o(i.W25Q128_PageProgram)
+    i.W25Q128_ReadData                       0x080009a8   Section        0  w25q128.o(i.W25Q128_ReadData)
+    i.W25Q128_ReadID                         0x080009ec   Section        0  w25q128.o(i.W25Q128_ReadID)
+    i.W25Q128_SectorErase                    0x08000a2a   Section        0  w25q128.o(i.W25Q128_SectorErase)
+    i.W25Q128_WaitBusy                       0x08000a5c   Section        0  w25q128.o(i.W25Q128_WaitBusy)
+    i.W25Q128_WriteEnable                    0x08000a8c   Section        0  w25q128.o(i.W25Q128_WriteEnable)
+    i.__scatterload_copy                     0x08000a9e   Section       14  handlers.o(i.__scatterload_copy)
+    i.__scatterload_null                     0x08000aac   Section        2  handlers.o(i.__scatterload_null)
+    i.__scatterload_zeroinit                 0x08000aae   Section       14  handlers.o(i.__scatterload_zeroinit)
+    i.main                                   0x08000abc   Section        0  main.o(i.main)
+    .constdata                               0x08000bb8   Section     1520  oled.o(.constdata)
     .data                                    0x20000000   Section        4  serial.o(.data)
     RxState                                  0x20000002   Data           1  serial.o(.data)
     pRxPackt                                 0x20000003   Data           1  serial.o(.data)
@@ -1090,18 +1091,19 @@ Image Symbol Table
     USART_ReceiveData                        0x08000947   Thumb Code    10  stm32f10x_usart.o(i.USART_ReceiveData)
     UsageFault_Handler                       0x08000951   Thumb Code     4  stm32f10x_it.o(i.UsageFault_Handler)
     W25Q128_Init                             0x08000955   Thumb Code     8  w25q128.o(i.W25Q128_Init)
-    W25Q128_ReadData                         0x0800095d   Thumb Code    68  w25q128.o(i.W25Q128_ReadData)
-    W25Q128_ReadID                           0x080009a1   Thumb Code    62  w25q128.o(i.W25Q128_ReadID)
-    W25Q128_SectorErase                      0x080009df   Thumb Code    50  w25q128.o(i.W25Q128_SectorErase)
-    W25Q128_WaitBusy                         0x08000a11   Thumb Code    44  w25q128.o(i.W25Q128_WaitBusy)
-    W25Q128_WriteEnable                      0x08000a41   Thumb Code    18  w25q128.o(i.W25Q128_WriteEnable)
-    __scatterload_copy                       0x08000a53   Thumb Code    14  handlers.o(i.__scatterload_copy)
-    __scatterload_null                       0x08000a61   Thumb Code     2  handlers.o(i.__scatterload_null)
-    __scatterload_zeroinit                   0x08000a63   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
-    main                                     0x08000a71   Thumb Code   206  main.o(i.main)
-    OLED_F8x16                               0x08000b64   Data        1520  oled.o(.constdata)
-    Region$$Table$$Base                      0x08001154   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x08001174   Number         0  anon$$obj.o(Region$$Table)
+    W25Q128_PageProgram                      0x0800095d   Thumb Code    76  w25q128.o(i.W25Q128_PageProgram)
+    W25Q128_ReadData                         0x080009a9   Thumb Code    68  w25q128.o(i.W25Q128_ReadData)
+    W25Q128_ReadID                           0x080009ed   Thumb Code    62  w25q128.o(i.W25Q128_ReadID)
+    W25Q128_SectorErase                      0x08000a2b   Thumb Code    50  w25q128.o(i.W25Q128_SectorErase)
+    W25Q128_WaitBusy                         0x08000a5d   Thumb Code    44  w25q128.o(i.W25Q128_WaitBusy)
+    W25Q128_WriteEnable                      0x08000a8d   Thumb Code    18  w25q128.o(i.W25Q128_WriteEnable)
+    __scatterload_copy                       0x08000a9f   Thumb Code    14  handlers.o(i.__scatterload_copy)
+    __scatterload_null                       0x08000aad   Thumb Code     2  handlers.o(i.__scatterload_null)
+    __scatterload_zeroinit                   0x08000aaf   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
+    main                                     0x08000abd   Thumb Code   216  main.o(i.main)
+    OLED_F8x16                               0x08000bb8   Data        1520  oled.o(.constdata)
+    Region$$Table$$Base                      0x080011a8   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x080011c8   Number         0  anon$$obj.o(Region$$Table)
     Serial_RxData                            0x20000000   Data           1  serial.o(.data)
     Serial_RxFlag                            0x20000001   Data           1  serial.o(.data)
     MID                                      0x20000004   Data           1  main.o(.data)
@@ -1119,9 +1121,9 @@ Memory Map of the image
 
   Image Entry point : 0x080000ed
 
-  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x00001184, Max: 0x00010000, ABSOLUTE)
+  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x000011d8, Max: 0x00010000, ABSOLUTE)
 
-    Execution Region ER_IROM1 (Base: 0x08000000, Size: 0x00001174, Max: 0x00010000, ABSOLUTE)
+    Execution Region ER_IROM1 (Base: 0x08000000, Size: 0x000011c8, Max: 0x00010000, ABSOLUTE)
 
     Base Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -1182,17 +1184,18 @@ Memory Map of the image
     0x08000946   0x0000000a   Code   RO         2974    i.USART_ReceiveData  stm32f10x_usart.o
     0x08000950   0x00000004   Code   RO         3719    i.UsageFault_Handler  stm32f10x_it.o
     0x08000954   0x00000008   Code   RO         3609    i.W25Q128_Init      w25q128.o
-    0x0800095c   0x00000044   Code   RO         3611    i.W25Q128_ReadData  w25q128.o
-    0x080009a0   0x0000003e   Code   RO         3612    i.W25Q128_ReadID    w25q128.o
-    0x080009de   0x00000032   Code   RO         3613    i.W25Q128_SectorErase  w25q128.o
-    0x08000a10   0x00000030   Code   RO         3614    i.W25Q128_WaitBusy  w25q128.o
-    0x08000a40   0x00000012   Code   RO         3615    i.W25Q128_WriteEnable  w25q128.o
-    0x08000a52   0x0000000e   Code   RO         3847    i.__scatterload_copy  mc_w.l(handlers.o)
-    0x08000a60   0x00000002   Code   RO         3848    i.__scatterload_null  mc_w.l(handlers.o)
-    0x08000a62   0x0000000e   Code   RO         3849    i.__scatterload_zeroinit  mc_w.l(handlers.o)
-    0x08000a70   0x000000f4   Code   RO         3663    i.main              main.o
-    0x08000b64   0x000005f0   Data   RO         3305    .constdata          oled.o
-    0x08001154   0x00000020   Data   RO         3845    Region$$Table       anon$$obj.o
+    0x0800095c   0x0000004c   Code   RO         3610    i.W25Q128_PageProgram  w25q128.o
+    0x080009a8   0x00000044   Code   RO         3611    i.W25Q128_ReadData  w25q128.o
+    0x080009ec   0x0000003e   Code   RO         3612    i.W25Q128_ReadID    w25q128.o
+    0x08000a2a   0x00000032   Code   RO         3613    i.W25Q128_SectorErase  w25q128.o
+    0x08000a5c   0x00000030   Code   RO         3614    i.W25Q128_WaitBusy  w25q128.o
+    0x08000a8c   0x00000012   Code   RO         3615    i.W25Q128_WriteEnable  w25q128.o
+    0x08000a9e   0x0000000e   Code   RO         3847    i.__scatterload_copy  mc_w.l(handlers.o)
+    0x08000aac   0x00000002   Code   RO         3848    i.__scatterload_null  mc_w.l(handlers.o)
+    0x08000aae   0x0000000e   Code   RO         3849    i.__scatterload_zeroinit  mc_w.l(handlers.o)
+    0x08000abc   0x000000fc   Code   RO         3663    i.main              main.o
+    0x08000bb8   0x000005f0   Data   RO         3305    .constdata          oled.o
+    0x080011a8   0x00000020   Data   RO         3845    Region$$Table       anon$$obj.o
 
 
     Execution Region RW_IRAM1 (Base: 0x20000000, Size: 0x00000478, Max: 0x00005000, ABSOLUTE)
@@ -1214,7 +1217,7 @@ Image component sizes
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
 
          0          0          0          0          0       4512   core_cm3.o
-       244         38          0         12          0       1226   main.o
+       252         36          0         12          0       1230   main.o
          0          0          0          0          0     201672   misc.o
        236         20          0          0          0       3702   myspi.o
        838         22       1520          0          0       7164   oled.o
@@ -1225,10 +1228,10 @@ Image component sizes
         32          6          0          0          0        521   stm32f10x_rcc.o
        124          0          0          0          0       9114   stm32f10x_usart.o
        328         28          0          0          0      10073   system_stm32f10x.o
-       254          4          0          0          0       3302   w25q128.o
+       330          4          0          0          0       3960   w25q128.o
 
     ----------------------------------------------------------------------
-      2594        146       1788         16       1128     258164   Object Totals
+      2678        144       1788         16       1128     258826   Object Totals
          0          0         32          0          0          0   (incl. Generated)
          6          0          0          0          4          0   (incl. Padding)
 
@@ -1267,15 +1270,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-      2680        162       1788         16       1128     256096   Grand Totals
-      2680        162       1788         16       1128     256096   ELF Image Totals
-      2680        162       1788         16          0          0   ROM Totals
+      2764        160       1788         16       1128     256706   Grand Totals
+      2764        160       1788         16       1128     256706   ELF Image Totals
+      2764        160       1788         16          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                 4468 (   4.36kB)
+    Total RO  Size (Code + RO Data)                 4552 (   4.45kB)
     Total RW  Size (RW Data + ZI Data)              1144 (   1.12kB)
-    Total ROM Size (Code + RO Data + RW Data)       4484 (   4.38kB)
+    Total ROM Size (Code + RO Data + RW Data)       4568 (   4.46kB)
 
 ==============================================================================
 
