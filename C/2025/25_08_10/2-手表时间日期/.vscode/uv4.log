@@ -1,0 +1,10 @@
+*** Using Compiler 'V5.05 update 1 (build 106)', folder: 'D:\Tool\Keil_v5\ARM\ARMCC\Bin'
+Build target 'Target 1'
+compiling main.c...
+linking...
+.\Objects\Project.axf: Error: L6218E: Undefined symbol AD_GetValue (referred from main.o).
+.\Objects\Project.axf: Error: L6218E: Undefined symbol AD_Init (referred from main.o).
+Not enough information to list image symbols.
+Finished: 1 information, 0 warning and 2 error messages.
+".\Objects\Project.axf" - 2 Error(s), 0 Warning(s).
+Target not created.
