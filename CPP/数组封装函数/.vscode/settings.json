@@ -1,0 +1,24 @@
+{
+    "files.associations": {
+        "istream": "cpp",
+        "streambuf": "cpp",
+        "tuple": "cpp",
+        "algorithm": "cpp",
+        "array": "cpp",
+        "iostream": "cpp",
+        "deque": "cpp",
+        "string": "cpp",
+        "unordered_map": "cpp",
+        "vector": "cpp",
+        "string_view": "cpp",
+        "initializer_list": "cpp",
+        "ostream": "cpp",
+        "utility": "cpp",
+        "sstream": "cpp",
+        "optional": "cpp",
+        "limits": "cpp",
+        "new": "cpp",
+        "cmath": "cpp",
+        "type_traits": "cpp"
+    }
+}

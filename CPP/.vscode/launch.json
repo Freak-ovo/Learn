@@ -1,0 +1,35 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "C/C++: g++.exe 生成和调试活动文件",
+            "type": "cppdbg",
+            "request": "launch",
+            // 要调试的可执行文件路径（当前打开的cpp文件编译后生成的exe）
+            "program": "${fileDirname}\\${fileBasenameNoExtension}.exe",
+            "args": [],          // 程序运行时的参数（无参数则留空）
+            "stopAtEntry": false, // 是否在main入口处暂停（false=直接运行）
+            "cwd": "${fileDirname}", // 工作目录（当前文件所在文件夹）
+            "environment": [],
+            "externalConsole": false, // 是否用外部控制台（false=VS Code内置终端）
+            "MIMode": "gdb",    // 调试器模式（GDB）
+            // ******** 关键：替换为你电脑上gdb.exe的实际路径！********
+            // 示例：如果你用MinGW，路径可能是 "C:\\MinGW\\bin\\gdb.exe"
+            "miDebuggerPath": "D:\\Tool\\mingw64\\bin\\gdb.exe", 
+            "setupCommands": [
+                {
+                    "description": "为 GDB 启用漂亮打印（更易读的变量显示）",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "反汇编风格改为 Intel 格式（更直观）",
+                    "text": "-gdb-set disassembly-flavor intel",
+                    "ignoreFailures": true
+                }
+            ],
+            // 调试前自动执行“编译任务”（需在 tasks.json 中配置对应任务）
+            "preLaunchTask": "C/C++: g++.exe 生成活动文件"
+        }
+    ]
+}
