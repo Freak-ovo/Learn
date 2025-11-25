@@ -1,0 +1,656 @@
+{
+  "metaInfo": {
+    "dataSource": "模拟疫情数据研究中心",
+    "updateTime": "2025-10-17 18:00:00",
+    "dataType": "全国省级行政区疫情统计数据",
+    "note": "本数据为技术测试模拟数据，不反映真实疫情状况，仅供地图开发调试使用"
+  },
+  "provinceDataList": [
+    {
+      "provinceName": "北京市",
+      "adcode": "110000",
+      "longitude": 116.4074,
+      "latitude": 39.9042,
+      "epidemicData": {
+        "totalConfirmed": 3288,
+        "currentConfirmed": 40,
+        "totalCured": 3211,
+        "totalDead": 37,
+        "newConfirmedToday": 2,
+        "newCuredToday": 4
+      },
+      "riskInfo": {
+        "riskLevel": "低风险",
+        "highRiskArea": 1,
+        "mediumRiskArea": 3
+      }
+    },
+    {
+      "provinceName": "天津市",
+      "adcode": "120000",
+      "longitude": 117.2007,
+      "latitude": 39.0842,
+      "epidemicData": {
+        "totalConfirmed": 1856,
+        "currentConfirmed": 22,
+        "totalCured": 1819,
+        "totalDead": 15,
+        "newConfirmedToday": 1,
+        "newCuredToday": 2
+      },
+      "riskInfo": {
+        "riskLevel": "低风险",
+        "highRiskArea": 0,
+        "mediumRiskArea": 2
+      }
+    },
+    {
+      "provinceName": "河北省",
+      "adcode": "130000",
+      "longitude": 114.5025,
+      "latitude": 38.0454,
+      "epidemicData": {
+        "totalConfirmed": 2543,
+        "currentConfirmed": 35,
+        "totalCured": 2492,
+        "totalDead": 16,
+        "newConfirmedToday": 3,
+        "newCuredToday": 5
+      },
+      "riskInfo": {
+        "riskLevel": "低风险",
+        "highRiskArea": 1,
+        "mediumRiskArea": 4
+      }
+    },
+    {
+      "provinceName": "山西省",
+      "adcode": "140000",
+      "longitude": 112.5489,
+      "latitude": 37.8774,
+      "epidemicData": {
+        "totalConfirmed": 1689,
+        "currentConfirmed": 18,
+        "totalCured": 1662,
+        "totalDead": 9,
+        "newConfirmedToday": 0,
+        "newCuredToday": 3
+      },
+      "riskInfo": {
+        "riskLevel": "低风险",
+        "highRiskArea": 0,
+        "mediumRiskArea": 1
+      }
+    },
+    {
+      "provinceName": "内蒙古自治区",
+      "adcode": "150000",
+      "longitude": 111.6708,
+      "latitude": 40.8183,
+      "epidemicData": {
+        "totalConfirmed": 1452,
+        "currentConfirmed": 25,
+        "totalCured": 1418,
+        "totalDead": 9,
+        "newConfirmedToday": 2,
+        "newCuredToday": 1
+      },
+      "riskInfo": {
+        "riskLevel": "低风险",
+        "highRiskArea": 0,
+        "mediumRiskArea": 2
+      }
+    },
+    {
+      "provinceName": "辽宁省",
+      "adcode": "210000",
+      "longitude": 123.4294,
+      "latitude": 41.8354,
+      "epidemicData": {
+        "totalConfirmed": 2178,
+        "currentConfirmed": 31,
+        "totalCured": 2132,
+        "totalDead": 15,
+        "newConfirmedToday": 1,
+        "newCuredToday": 4
+      },
+      "riskInfo": {
+        "riskLevel": "低风险",
+        "highRiskArea": 1,
+        "mediumRiskArea": 3
+      }
+    },
+    {
+      "provinceName": "吉林省",
+      "adcode": "220000",
+      "longitude": 125.3245,
+      "latitude": 43.8868,
+      "epidemicData": {
+        "totalConfirmed": 1985,
+        "currentConfirmed": 28,
+        "totalCured": 1947,
+        "totalDead": 10,
+        "newConfirmedToday": 0,
+        "newCuredToday": 2
+      },
+      "riskInfo": {
+        "riskLevel": "低风险",
+        "highRiskArea": 0,
+        "mediumRiskArea": 2
+      }
+    },
+    {
+      "provinceName": "黑龙江省",
+      "adcode": "230000",
+      "longitude": 126.6425,
+      "latitude": 45.7560,
+      "epidemicData": {
+        "totalConfirmed": 2162,
+        "currentConfirmed": 25,
+        "totalCured": 2118,
+        "totalDead": 19,
+        "newConfirmedToday": 1,
+        "newCuredToday": 4
+      },
+      "riskInfo": {
+        "riskLevel": "低风险",
+        "highRiskArea": 0,
+        "mediumRiskArea": 1
+      }
+    },
+    {
+      "provinceName": "上海市",
+      "adcode": "310000",
+      "longitude": 121.4737,
+      "latitude": 31.2304,
+      "epidemicData": {
+        "totalConfirmed": 5870,
+        "currentConfirmed": 28,
+        "totalCured": 5815,
+        "totalDead": 27,
+        "newConfirmedToday": 1,
+        "newCuredToday": 3
+      },
+      "riskInfo": {
+        "riskLevel": "低风险",
+        "highRiskArea": 0,
+        "mediumRiskArea": 2
+      }
+    },
+    {
+      "provinceName": "江苏省",
+      "adcode": "320000",
+      "longitude": 118.7674,
+      "latitude": 32.0415,
+      "epidemicData": {
+        "totalConfirmed": 2751,
+        "currentConfirmed": 20,
+        "totalCured": 2716,
+        "totalDead": 15,
+        "newConfirmedToday": 0,
+        "newCuredToday": 2
+      },
+      "riskInfo": {
+        "riskLevel": "低风险",
+        "highRiskArea": 0,
+        "mediumRiskArea": 1
+      }
+    },
+    {
+      "provinceName": "浙江省",
+      "adcode": "330000",
+      "longitude": 120.1551,
+      "latitude": 30.2741,
+      "epidemicData": {
+        "totalConfirmed": 3126,
+        "currentConfirmed": 32,
+        "totalCured": 3080,
+        "totalDead": 14,
+        "newConfirmedToday": 2,
+        "newCuredToday": 3
+      },
+      "riskInfo": {
+        "riskLevel": "低风险",
+        "highRiskArea": 1,
+        "mediumRiskArea": 3
+      }
+    },
+    {
+      "provinceName": "安徽省",
+      "adcode": "340000",
+      "longitude": 117.2830,
+      "latitude": 31.8617,
+      "epidemicData": {
+        "totalConfirmed": 1895,
+        "currentConfirmed": 24,
+        "totalCured": 1862,
+        "totalDead": 9,
+        "newConfirmedToday": 1,
+        "newCuredToday": 2
+      },
+      "riskInfo": {
+        "riskLevel": "低风险",
+        "highRiskArea": 0,
+        "mediumRiskArea": 2
+      }
+    },
+    {
+      "provinceName": "福建省",
+      "adcode": "350000",
+      "longitude": 119.3062,
+      "latitude": 26.0746,
+      "epidemicData": {
+        "totalConfirmed": 2358,
+        "currentConfirmed": 29,
+        "totalCured": 2319,
+        "totalDead": 10,
+        "newConfirmedToday": 2,
+        "newCuredToday": 3
+      },
+      "riskInfo": {
+        "riskLevel": "低风险",
+        "highRiskArea": 0,
+        "mediumRiskArea": 3
+      }
+    },
+    {
+      "provinceName": "江西省",
+      "adcode": "360000",
+      "longitude": 115.8581,
+      "latitude": 28.6823,
+      "epidemicData": {
+        "totalConfirmed": 1765,
+        "currentConfirmed": 21,
+        "totalCured": 1735,
+        "totalDead": 9,
+        "newConfirmedToday": 0,
+        "newCuredToday": 2
+      },
+      "riskInfo": {
+        "riskLevel": "低风险",
+        "highRiskArea": 0,
+        "mediumRiskArea": 1
+      }
+    },
+    {
+      "provinceName": "山东省",
+      "adcode": "370000",
+      "longitude": 117.0009,
+      "latitude": 36.6758,
+      "epidemicData": {
+        "totalConfirmed": 2987,
+        "currentConfirmed": 36,
+        "totalCured": 2936,
+        "totalDead": 15,
+        "newConfirmedToday": 3,
+        "newCuredToday": 4
+      },
+      "riskInfo": {
+        "riskLevel": "低风险",
+        "highRiskArea": 1,
+        "mediumRiskArea": 4
+      }
+    },
+    {
+      "provinceName": "河南省",
+      "adcode": "410000",
+      "longitude": 113.6654,
+      "latitude": 34.7579,
+      "epidemicData": {
+        "totalConfirmed": 3254,
+        "currentConfirmed": 42,
+        "totalCured": 3197,
+        "totalDead": 15,
+        "newConfirmedToday": 2,
+        "newCuredToday": 5
+      },
+      "riskInfo": {
+        "riskLevel": "低风险",
+        "highRiskArea": 1,
+        "mediumRiskArea": 5
+      }
+    },
+    {
+      "provinceName": "湖北省",
+      "adcode": "420000",
+      "longitude": 114.3055,
+      "latitude": 30.5928,
+      "epidemicData": {
+        "totalConfirmed": 6892,
+        "currentConfirmed": 38,
+        "totalCured": 6835,
+        "totalDead": 19,
+        "newConfirmedToday": 1,
+        "newCuredToday": 3
+      },
+      "riskInfo": {
+        "riskLevel": "低风险",
+        "highRiskArea": 0,
+        "mediumRiskArea": 3
+      }
+    },
+    {
+      "provinceName": "湖南省",
+      "adcode": "430000",
+      "longitude": 112.9822,
+      "latitude": 28.1944,
+      "epidemicData": {
+        "totalConfirmed": 2145,
+        "currentConfirmed": 26,
+        "totalCured": 2109,
+        "totalDead": 10,
+        "newConfirmedToday": 1,
+        "newCuredToday": 2
+      },
+      "riskInfo": {
+        "riskLevel": "低风险",
+        "highRiskArea": 0,
+        "mediumRiskArea": 2
+      }
+    },
+    {
+      "provinceName": "广东省",
+      "adcode": "440000",
+      "longitude": 113.2644,
+      "latitude": 23.1291,
+      "epidemicData": {
+        "totalConfirmed": 8972,
+        "currentConfirmed": 62,
+        "totalCured": 8890,
+        "totalDead": 20,
+        "newConfirmedToday": 3,
+        "newCuredToday": 6
+      },
+      "riskInfo": {
+        "riskLevel": "低风险",
+        "highRiskArea": 2,
+        "mediumRiskArea": 7
+      }
+    },
+    {
+      "provinceName": "广西壮族自治区",
+      "adcode": "450000",
+      "longitude": 108.3200,
+      "latitude": 22.8240,
+      "epidemicData": {
+        "totalConfirmed": 1658,
+        "currentConfirmed": 23,
+        "totalCured": 1626,
+        "totalDead": 9,
+        "newConfirmedToday": 1,
+        "newCuredToday": 2
+      },
+      "riskInfo": {
+        "riskLevel": "低风险",
+        "highRiskArea": 0,
+        "mediumRiskArea": 2
+      }
+    },
+    {
+      "provinceName": "海南省",
+      "adcode": "460000",
+      "longitude": 110.3312,
+      "latitude": 20.0319,
+      "epidemicData": {
+        "totalConfirmed": 1489,
+        "currentConfirmed": 19,
+        "totalCured": 1461,
+        "totalDead": 9,
+        "newConfirmedToday": 0,
+        "newCuredToday": 1
+      },
+      "riskInfo": {
+        "riskLevel": "低风险",
+        "highRiskArea": 0,
+        "mediumRiskArea": 1
+      }
+    },
+    {
+      "provinceName": "重庆市",
+      "adcode": "500000",
+      "longitude": 106.5049,
+      "latitude": 29.5332,
+      "epidemicData": {
+        "totalConfirmed": 2856,
+        "currentConfirmed": 37,
+        "totalCured": 2804,
+        "totalDead": 15,
+        "newConfirmedToday": 2,
+        "newCuredToday": 3
+      },
+      "riskInfo": {
+        "riskLevel": "低风险",
+        "highRiskArea": 1,
+        "mediumRiskArea": 4
+      }
+    },
+    {
+      "provinceName": "四川省",
+      "adcode": "510000",
+      "longitude": 104.0657,
+      "latitude": 30.5728,
+      "epidemicData": {
+        "totalConfirmed": 3578,
+        "currentConfirmed": 34,
+        "totalCured": 3525,
+        "totalDead": 19,
+        "newConfirmedToday": 1,
+        "newCuredToday": 4
+      },
+      "riskInfo": {
+        "riskLevel": "低风险",
+        "highRiskArea": 1,
+        "mediumRiskArea": 5
+      }
+    },
+    {
+      "provinceName": "贵州省",
+      "adcode": "520000",
+      "longitude": 106.7135,
+      "latitude": 26.5784,
+      "epidemicData": {
+        "totalConfirmed": 1356,
+        "currentConfirmed": 17,
+        "totalCured": 1330,
+        "totalDead": 9,
+        "newConfirmedToday": 0,
+        "newCuredToday": 2
+      },
+      "riskInfo": {
+        "riskLevel": "低风险",
+        "highRiskArea": 0,
+        "mediumRiskArea": 1
+      }
+    },
+    {
+      "provinceName": "云南省",
+      "adcode": "530000",
+      "longitude": 102.7126,
+      "latitude": 25.0406,
+      "epidemicData": {
+        "totalConfirmed": 2045,
+        "currentConfirmed": 28,
+        "totalCured": 2007,
+        "totalDead": 10,
+        "newConfirmedToday": 1,
+        "newCuredToday": 3
+      },
+      "riskInfo": {
+        "riskLevel": "低风险",
+        "highRiskArea": 0,
+        "mediumRiskArea": 2
+      }
+    },
+    {
+      "provinceName": "西藏自治区",
+      "adcode": "540000",
+      "longitude": 91.1322,
+      "latitude": 29.6604,
+      "epidemicData": {
+        "totalConfirmed": 987,
+        "currentConfirmed": 12,
+        "totalCured": 968,
+        "totalDead": 7,
+        "newConfirmedToday": 0,
+        "newCuredToday": 1
+      },
+      "riskInfo": {
+        "riskLevel": "低风险",
+        "highRiskArea": 0,
+        "mediumRiskArea": 0
+      }
+    },
+    {
+      "provinceName": "陕西省",
+      "adcode": "610000",
+      "longitude": 108.9480,
+      "latitude": 34.2632,
+      "epidemicData": {
+        "totalConfirmed": 2258,
+        "currentConfirmed": 30,
+        "totalCured": 2218,
+        "totalDead": 10,
+        "newConfirmedToday": 1,
+        "newCuredToday": 3
+      },
+      "riskInfo": {
+        "riskLevel": "低风险",
+        "highRiskArea": 0,
+        "mediumRiskArea": 3
+      }
+    },
+    {
+      "provinceName": "甘肃省",
+      "adcode": "620000",
+      "longitude": 103.8235,
+      "latitude": 36.0581,
+      "epidemicData": {
+        "totalConfirmed": 1542,
+        "currentConfirmed": 21,
+        "totalCured": 1512,
+        "totalDead": 9,
+        "newConfirmedToday": 0,
+        "newCuredToday": 2
+      },
+      "riskInfo": {
+        "riskLevel": "低风险",
+        "highRiskArea": 0,
+        "mediumRiskArea": 1
+      }
+    },
+    {
+      "provinceName": "青海省",
+      "adcode": "630000",
+      "longitude": 101.7789,
+      "latitude": 36.6232,
+      "epidemicData": {
+        "totalConfirmed": 876,
+        "currentConfirmed": 14,
+        "totalCured": 855,
+        "totalDead": 7,
+        "newConfirmedToday": 0,
+        "newCuredToday": 1
+      },
+      "riskInfo": {
+        "riskLevel": "低风险",
+        "highRiskArea": 0,
+        "mediumRiskArea": 0
+      }
+    },
+    {
+      "provinceName": "宁夏回族自治区",
+      "adcode": "640000",
+      "longitude": 106.2782,
+      "latitude": 38.4664,
+      "epidemicData": {
+        "totalConfirmed": 1125,
+        "currentConfirmed": 18,
+        "totalCured": 1100,
+        "totalDead": 7,
+        "newConfirmedToday": 0,
+        "newCuredToday": 2
+      },
+      "riskInfo": {
+        "riskLevel": "低风险",
+        "highRiskArea": 0,
+        "mediumRiskArea": 1
+      }
+    },
+    {
+      "provinceName": "新疆维吾尔自治区",
+      "adcode": "650000",
+      "longitude": 87.6177,
+      "latitude": 43.7930,
+      "epidemicData": {
+        "totalConfirmed": 1892,
+        "currentConfirmed": 26,
+        "totalCured": 1857,
+        "totalDead": 9,
+        "newConfirmedToday": 1,
+        "newCuredToday": 2
+      },
+      "riskInfo": {
+        "riskLevel": "低风险",
+        "highRiskArea": 0,
+        "mediumRiskArea": 2
+      }
+    },
+    {
+      "provinceName": "香港特别行政区",
+      "adcode": "810000",
+      "longitude": 114.1733,
+      "latitude": 22.3200,
+      "epidemicData": {
+        "totalConfirmed": 58720,
+        "currentConfirmed": 452,
+        "totalCured": 57890,
+        "totalDead": 378,
+        "newConfirmedToday": 32,
+        "newCuredToday": 45
+      },
+      "riskInfo": {
+        "riskLevel": "中风险",
+        "highRiskArea": 5,
+        "mediumRiskArea": 12
+      }
+    },
+    {
+      "provinceName": "澳门特别行政区",
+      "adcode": "820000",
+      "longitude": 113.5491,
+      "latitude": 22.1987,
+      "epidemicData": {
+        "totalConfirmed": 3285,
+        "currentConfirmed": 48,
+        "totalCured": 3220,
+        "totalDead": 17,
+        "newConfirmedToday": 3,
+        "newCuredToday": 5
+      },
+      "riskInfo": {
+        "riskLevel": "低风险",
+        "highRiskArea": 1,
+        "mediumRiskArea": 3
+      }
+    },
+    {
+      "provinceName": "台湾省",
+      "adcode": "710000",
+      "longitude": 121.5090,
+      "latitude": 25.0444,
+      "epidemicData": {
+        "totalConfirmed": 128750,
+        "currentConfirmed": 1256,
+        "totalCured": 126890,
+        "totalDead": 604,
+        "newConfirmedToday": 89,
+        "newCuredToday": 102
+      },
+      "riskInfo": {
+        "riskLevel": "中风险",
+        "highRiskArea": 8,
+        "mediumRiskArea": 21
+      }
+    }
+  ]
+}
