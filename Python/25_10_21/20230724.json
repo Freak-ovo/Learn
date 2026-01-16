@@ -1,0 +1,12 @@
+[
+    {"date": "2023-07-24", "order_id": "ORDER011", "money": "2450", "province": "山东省"},
+    {"date": "2023-07-24", "order_id": "ORDER012", "money": "980", "province": "四川省"},
+    {"date": "2023-07-25", "order_id": "ORDER013", "money": "3120", "province": "湖北省"},
+    {"date": "2023-07-25", "order_id": "ORDER014", "money": "760", "province": "河南省"},
+    {"date": "2023-07-26", "order_id": "ORDER015", "money": "4890", "province": "广东省"},
+    {"date": "2023-07-26", "order_id": "ORDER016", "money": "1350", "province": "浙江省"},
+    {"date": "2023-07-27", "order_id": "ORDER017", "money": "2980", "province": "江苏省"},
+    {"date": "2023-07-27", "order_id": "ORDER018", "money": "540", "province": "山东省"},
+    {"date": "2023-07-28", "order_id": "ORDER019", "money": "3620", "province": "四川省"},
+    {"date": "2023-07-28", "order_id": "ORDER020", "money": "870", "province": "湖北省"}
+]

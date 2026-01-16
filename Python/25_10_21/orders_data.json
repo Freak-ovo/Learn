@@ -1,0 +1,122 @@
+[
+    {
+        "order_date": "2023-07-24",
+        "order_id": "ORDER001",
+        "money": 3560,
+        "province": "广东省"
+    },
+    {
+        "order_date": "2023-07-24",
+        "order_id": "ORDER002",
+        "money": 1280,
+        "province": "浙江省"
+    },
+    {
+        "order_date": "2023-07-25",
+        "order_id": "ORDER003",
+        "money": 5200,
+        "province": "江苏省"
+    },
+    {
+        "order_date": "2023-07-25",
+        "order_id": "ORDER004",
+        "money": 890,
+        "province": "山东省"
+    },
+    {
+        "order_date": "2023-07-26",
+        "order_id": "ORDER005",
+        "money": 2750,
+        "province": "广东省"
+    },
+    {
+        "order_date": "2023-07-26",
+        "order_id": "ORDER006",
+        "money": 1980,
+        "province": "四川省"
+    },
+    {
+        "order_date": "2023-07-27",
+        "order_id": "ORDER007",
+        "money": 4120,
+        "province": "浙江省"
+    },
+    {
+        "order_date": "2023-07-27",
+        "order_id": "ORDER008",
+        "money": 630,
+        "province": "湖北省"
+    },
+    {
+        "order_date": "2023-07-28",
+        "order_id": "ORDER009",
+        "money": 3890,
+        "province": "江苏省"
+    },
+    {
+        "order_date": "2023-07-28",
+        "order_id": "ORDER010",
+        "money": 1050,
+        "province": "河南省"
+    },
+    {
+        "order_date": "2023-07-24",
+        "order_id": "ORDER011",
+        "money": 2450,
+        "province": "山东省"
+    },
+    {
+        "order_date": "2023-07-24",
+        "order_id": "ORDER012",
+        "money": 980,
+        "province": "四川省"
+    },
+    {
+        "order_date": "2023-07-25",
+        "order_id": "ORDER013",
+        "money": 3120,
+        "province": "湖北省"
+    },
+    {
+        "order_date": "2023-07-25",
+        "order_id": "ORDER014",
+        "money": 760,
+        "province": "河南省"
+    },
+    {
+        "order_date": "2023-07-26",
+        "order_id": "ORDER015",
+        "money": 4890,
+        "province": "广东省"
+    },
+    {
+        "order_date": "2023-07-26",
+        "order_id": "ORDER016",
+        "money": 1350,
+        "province": "浙江省"
+    },
+    {
+        "order_date": "2023-07-27",
+        "order_id": "ORDER017",
+        "money": 2980,
+        "province": "江苏省"
+    },
+    {
+        "order_date": "2023-07-27",
+        "order_id": "ORDER018",
+        "money": 540,
+        "province": "山东省"
+    },
+    {
+        "order_date": "2023-07-28",
+        "order_id": "ORDER019",
+        "money": 3620,
+        "province": "四川省"
+    },
+    {
+        "order_date": "2023-07-28",
+        "order_id": "ORDER020",
+        "money": 870,
+        "province": "湖北省"
+    }
+]

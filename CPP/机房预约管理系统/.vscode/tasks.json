@@ -1,0 +1,27 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "type": "cppbuild",
+      "label": "多文件编译任务", // 自定义任务名称，方便识别
+      "command": "d:\\Tool\\mingw64\\bin\\x86_64-w64-mingw32-g++.exe", // 你的g++编译器路径
+      "args": [
+        "-fdiagnostics-color=always",
+        "-g",
+        "${workspaceFolder}/*.cpp", // 编译项目根目录下所有.cpp文件
+        "-o",
+        "${workspaceFolder}/ComputerRoomReservationSystem.exe", // 输出可执行文件的名称和路径
+        "-fexec-charset=UTF-8" // 解决Windows终端中文乱码（可选）
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}" // 工作目录为项目根目录
+      },
+      "problemMatcher": ["$gcc"],
+      "group": {
+        "kind": "build",
+        "isDefault": true // 设置为默认构建任务
+      },
+      "detail": "编译项目中所有.cpp文件"
+    }
+  ]
+}

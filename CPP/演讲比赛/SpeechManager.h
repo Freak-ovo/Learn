@@ -1,10 +1,13 @@
 #pragma once
 #include <iostream>
+#include <algorithm>
 using namespace std;
 #include "speaker.h"
 #include <vector>
+#include <deque>
+#include <numeric>
 #include <map>
-
+#include <fstream>
 
 //设计演讲比赛管理类
 class SpeechManager
@@ -25,12 +28,32 @@ public:
     //演讲比赛
     void SpeechCompetition();
 
+    //开始比赛
+    void StartSpeechCompetition();
+
+    // 抽签
+    void DrawSpeaker();
+    // 比赛
+    void SpeechContest();
+
+    // 显示得分
+    void ShowScore();
+    
+    // 存储记录
+    void StoreRecord();
     //创建选手
     void CreateSpeaker();
+
+    // 读取记录
+    void loadRecord();
+
+    // 清空记录
+    void ClearRecord();
     //析构函数
     ~SpeechManager();
 
 
+public:
 
     //成员属性
     //保存第一轮的演讲者的编号

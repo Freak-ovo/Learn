@@ -57,14 +57,14 @@ class JsonFileReader(FileReader):
 if __name__ == "__main__":
     try:
         # 测试文本文件读取（使用之前生成的20230724.txt）
-        text_reader = TextFileReader(r"D:\Learn\VSCode\Python\25_10_20\20230724.txt")
+        text_reader = TextFileReader(r"D:\Learn\VSCode\Python\25_10_21\20230724.txt")
         text_records = text_reader.read_data()
         print("文本文件数据（前2条）：")
         for r in text_records[:2]:
             print(f"{r.date} | {r.order_id} | {r.money} | {r.province}")
 
         # 测试JSON文件读取（使用之前生成的25_10_20\20230724.json）
-        json_reader = JsonFileReader(r"D:\Learn\VSCode\Python\25_10_20\20230724.json")
+        json_reader = JsonFileReader(r"D:\Learn\VSCode\Python\25_10_21\20230724.json")
         json_records = json_reader.read_data()
         print("\nJSON文件数据（前2条）：")
         for r in json_records[:2]:

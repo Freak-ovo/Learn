@@ -50,6 +50,7 @@
         "set": "cpp",
         "map": "cpp",
         "functional": "cpp",
-        "iterator": "cpp"
+        "iterator": "cpp",
+        "numeric": "cpp"
     }
 }
